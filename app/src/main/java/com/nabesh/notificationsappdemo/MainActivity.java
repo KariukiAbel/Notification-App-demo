@@ -11,7 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
     Button btn;
     NotificationCompat.Builder notification;
     public static final int uniqueid = 4630;
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 notification.setWhen(System.currentTimeMillis());
                 Log.d("notification","Success");
 
-                Intent intent = new Intent(this,MainActivity.class);
+                Intent intent = new Intent(MainActivity.this,MainActivity.class);
                 PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                 notification.setContentIntent(pendingIntent);
 
@@ -45,4 +45,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
